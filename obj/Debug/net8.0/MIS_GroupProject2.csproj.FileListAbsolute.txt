@@ -1,0 +1,14 @@
+/Users/osheawoodruff/Desktop/MIS321-Fall2025/MIS_GroupProject2/bin/Debug/net8.0/MIS_GroupProject2
+/Users/osheawoodruff/Desktop/MIS321-Fall2025/MIS_GroupProject2/bin/Debug/net8.0/MIS_GroupProject2.deps.json
+/Users/osheawoodruff/Desktop/MIS321-Fall2025/MIS_GroupProject2/bin/Debug/net8.0/MIS_GroupProject2.runtimeconfig.json
+/Users/osheawoodruff/Desktop/MIS321-Fall2025/MIS_GroupProject2/bin/Debug/net8.0/MIS_GroupProject2.dll
+/Users/osheawoodruff/Desktop/MIS321-Fall2025/MIS_GroupProject2/bin/Debug/net8.0/MIS_GroupProject2.pdb
+/Users/osheawoodruff/Desktop/MIS321-Fall2025/MIS_GroupProject2/obj/Debug/net8.0/MIS_GroupProject2.GeneratedMSBuildEditorConfig.editorconfig
+/Users/osheawoodruff/Desktop/MIS321-Fall2025/MIS_GroupProject2/obj/Debug/net8.0/MIS_GroupProject2.AssemblyInfoInputs.cache
+/Users/osheawoodruff/Desktop/MIS321-Fall2025/MIS_GroupProject2/obj/Debug/net8.0/MIS_GroupProject2.AssemblyInfo.cs
+/Users/osheawoodruff/Desktop/MIS321-Fall2025/MIS_GroupProject2/obj/Debug/net8.0/MIS_GroupProject2.csproj.CoreCompileInputs.cache
+/Users/osheawoodruff/Desktop/MIS321-Fall2025/MIS_GroupProject2/obj/Debug/net8.0/MIS_GroupProject2.dll
+/Users/osheawoodruff/Desktop/MIS321-Fall2025/MIS_GroupProject2/obj/Debug/net8.0/refint/MIS_GroupProject2.dll
+/Users/osheawoodruff/Desktop/MIS321-Fall2025/MIS_GroupProject2/obj/Debug/net8.0/MIS_GroupProject2.pdb
+/Users/osheawoodruff/Desktop/MIS321-Fall2025/MIS_GroupProject2/obj/Debug/net8.0/MIS_GroupProject2.genruntimeconfig.cache
+/Users/osheawoodruff/Desktop/MIS321-Fall2025/MIS_GroupProject2/obj/Debug/net8.0/ref/MIS_GroupProject2.dll
