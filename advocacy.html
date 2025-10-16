@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>enlighten.org | Topics by State</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container nav">
+        <div class="brand">
+          <div class="logo" aria-hidden="true"></div>
+          <a href="index.html">enlighten.org</a>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="pages/enlightenment.html">Enlightenment</a></li>
+            <li><a href="pages/history.html">History</a></li>
+            <li><a href="pages/decline.html">Decline</a></li>
+            <li><a href="pages/why-care.html">Why Care</a></li>
+            <li><a href="advocacy.html">Advocacy</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="hero">
+        <h1>Advocacy Topics by State</h1>
+        <p>
+          Select your state to view key education issues and actionable steps.
+        </p>
+      </section>
+
+      <section>
+        <label for="state" class="sr-only">State</label>
+        <select
+          id="state"
+          class="select"
+          aria-label="Choose your state"
+        ></select>
+        <div class="topic-list" id="topics"></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <small>&copy; <span id="year"></span> enlighten.org</small>
+      </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/advocacy.js"></script>
+  </body>
+</html>
