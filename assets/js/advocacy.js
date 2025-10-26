@@ -2733,12 +2733,18 @@
       challengesHeader.innerHTML = '<h4>Top 3 Educational Challenges in Your Area</h4>';
       container.appendChild(challengesHeader);
 
+      // Create a container specifically for the 3 challenges
+      var challengesContainer = document.createElement('div');
+      challengesContainer.className = 'challenges-grid';
+      
       content.challenges.forEach(function(challenge, index) {
         var card = document.createElement('div');
         card.className = 'location-card challenge-card';
         card.innerHTML = '<h5>Challenge ' + (index + 1) + '</h5><p>' + challenge + '</p>';
-        container.appendChild(card);
+        challengesContainer.appendChild(card);
       });
+      
+      container.appendChild(challengesContainer);
     }
 
     // Create resource cards
