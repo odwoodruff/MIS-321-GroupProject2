@@ -28,14 +28,122 @@
     </header>
 
     <main class="container">
+      <!-- Hero Section -->
       <section class="hero">
-        <h1>Advocacy Topics by State</h1>
+        <h1>Education Empowers Communities</h1>
+        <p class="hero-subtext">
+          Over 260 million children worldwide lack access to education.
+          Together, we can change that.
+        </p>
+        <button class="cta-button" onclick="scrollToAction()">
+          Learn how to help
+        </button>
+        <div class="hero-image">
+          <img
+            src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            alt="Children learning in a classroom"
+          />
+        </div>
+      </section>
+
+      <!-- Education Impact Sections -->
+      <section class="impact-sections">
+        <div class="impact-card">
+          <h3>Education to Literacy</h3>
+          <p>
+            Quality education builds the foundation for literacy, enabling
+            individuals to read, write, and communicate effectively. This
+            fundamental skill opens doors to knowledge, employment, and civic
+            participation.
+          </p>
+        </div>
+        <div class="impact-card">
+          <h3>Education to Economic Growth</h3>
+          <p>
+            Education drives economic development by creating skilled
+            workforces, fostering innovation, and reducing poverty. Every year
+            of schooling increases individual earnings by 10% on average.
+          </p>
+        </div>
+        <div class="impact-card">
+          <h3>Equal Access to Empowered Communities</h3>
+          <p>
+            When education is accessible to all, communities become more
+            resilient, democratic, and prosperous. Equal access ensures that
+            talent and potential are not wasted due to circumstances of birth.
+          </p>
+        </div>
+      </section>
+
+      <!-- Education Leader Quote -->
+      <section class="quote-section">
+        <blockquote>
+          "Education is the most powerful weapon which you can use to change the
+          world."
+          <cite>— Nelson Mandela</cite>
+        </blockquote>
+      </section>
+
+      <!-- Location-Based Content -->
+      <section class="location-content" id="locationContent">
+        <h2>In your area...</h2>
+        <div class="location-cards" id="locationCards">
+          <!-- Dynamic content will be inserted here -->
+        </div>
+      </section>
+
+      <!-- Success Stories Section -->
+      <section class="success-stories">
+        <h2>Success Stories</h2>
+        <p>
+          Share your local education success story and inspire others in your
+          community.
+        </p>
+        <div class="story-form">
+          <form id="storyForm">
+            <div class="form-group">
+              <label for="storyTitle">Story Title</label>
+              <input type="text" id="storyTitle" name="title" required />
+            </div>
+            <div class="form-group">
+              <label for="storyLocation">Location</label>
+              <input type="text" id="storyLocation" name="location" required />
+            </div>
+            <div class="form-group">
+              <label for="storyContent">Your Story</label>
+              <textarea
+                id="storyContent"
+                name="content"
+                rows="5"
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="btn">Share Your Story</button>
+          </form>
+        </div>
+        <div class="stories-controls">
+          <button id="viewStoriesBtn" class="btn btn-secondary">
+            View Success Stories
+          </button>
+          <button
+            id="hideStoriesBtn"
+            class="btn btn-secondary"
+            style="display: none"
+          >
+            Hide Stories
+          </button>
+        </div>
+        <div class="stories-display" id="storiesDisplay" style="display: none">
+          <!-- User stories will be displayed here -->
+        </div>
+      </section>
+
+      <!-- State Selection (Enhanced) -->
+      <section class="state-selection">
+        <h2>Advocacy Topics by State</h2>
         <p>
           Select your state to view key education issues and actionable steps.
         </p>
-      </section>
-
-      <section>
         <label for="state" class="sr-only">State</label>
         <select
           id="state"
