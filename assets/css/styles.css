@@ -243,6 +243,109 @@ body {
   min-height: 100px;
 }
 
+/* Sources section */
+.sources {
+  margin-top: 40px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.sources h3 {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.sources ul {
+  margin: 0;
+  padding-left: 16px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.sources li {
+  margin-bottom: 8px;
+}
+
+.sources em {
+  color: #9ca3af;
+  font-size: 11px;
+}
+
+/* Timeline styling */
+.timeline {
+  margin: 32px 0;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.timeline h3 {
+  margin: 0 0 24px;
+  color: var(--accent);
+  text-align: center;
+  font-size: 18px;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.timeline-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 60px;
+  top: 40px;
+  bottom: -24px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--accent), var(--accent-3));
+}
+
+.timeline-year {
+  flex-shrink: 0;
+  width: 80px;
+  height: 40px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-3));
+  color: #0b1220;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 12px;
+  margin-right: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.timeline-content {
+  flex: 1;
+  padding-left: 8px;
+}
+
+.timeline-content h4 {
+  margin: 0 0 8px;
+  color: var(--text);
+  font-size: 16px;
+}
+
+.timeline-content p {
+  margin: 0;
+  color: #e6edf5;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
 /* Advocacy list */
 .topic-list { margin-top: 16px; display: grid; grid-template-columns: 1fr; gap: 12px; }
 @media (min-width: 800px) { .topic-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
