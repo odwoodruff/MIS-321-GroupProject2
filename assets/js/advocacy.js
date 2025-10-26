@@ -2754,6 +2754,10 @@
       resourcesHeader.innerHTML = '<h4>Local Resources & Action Items</h4>';
       container.appendChild(resourcesHeader);
 
+      // Create a container specifically for the resources
+      var resourcesContainer = document.createElement('div');
+      resourcesContainer.className = 'resources-grid';
+
       content.resources.forEach(function(resource) {
         var card = document.createElement('div');
         card.className = 'location-card resource-card';
@@ -2771,8 +2775,10 @@
         actions.appendChild(link);
         card.innerHTML = '<h5>' + resource.name + '</h5><p>Local resource for ' + content.state + '</p>';
         card.appendChild(actions);
-        container.appendChild(card);
+        resourcesContainer.appendChild(card);
       });
+      
+      container.appendChild(resourcesContainer);
     }
 
     // Add additional local opportunities
