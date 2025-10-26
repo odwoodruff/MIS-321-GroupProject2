@@ -346,6 +346,33 @@ body {
   line-height: 1.5;
 }
 
+/* Decline page sections */
+.decline-section {
+  margin: 24px 0;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  border-left: 4px solid var(--accent-2);
+}
+
+.decline-section h3 {
+  margin: 0 0 16px;
+  color: var(--accent-2);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.decline-section p {
+  margin: 0 0 12px;
+  color: #e6edf5;
+  line-height: 1.6;
+}
+
+.decline-section p:last-child {
+  margin-bottom: 0;
+}
+
 /* Advocacy list */
 .topic-list { margin-top: 16px; display: grid; grid-template-columns: 1fr; gap: 12px; }
 @media (min-width: 800px) { .topic-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
