@@ -3006,6 +3006,97 @@
     return userId;
   }
 
+  // Custom Alert Function
+  function showCustomAlert(type, title, message, branding) {
+    var alertDiv = document.createElement('div');
+    alertDiv.className = 'custom-alert';
+    
+    var icon = '';
+    switch(type) {
+      case 'success':
+        icon = '✅';
+        break;
+      case 'warning':
+        icon = '⚠️';
+        break;
+      case 'danger':
+        icon = '❌';
+        break;
+      default:
+        icon = 'ℹ️';
+    }
+    
+    alertDiv.innerHTML = 
+      '<div class="alert-content">' +
+        '<div class="alert-icon ' + type + '">' + icon + '</div>' +
+        '<h3 class="alert-title">' + title + '</h3>' +
+        '<p class="alert-message">' + message + '</p>' +
+        '<div class="alert-branding">' + branding + '</div>' +
+        '<div class="alert-actions">' +
+          '<button class="alert-btn primary" onclick="closeCustomAlert()">OK</button>' +
+        '</div>' +
+      '</div>';
+    
+    document.body.appendChild(alertDiv);
+    
+    // Auto close after 4 seconds
+    setTimeout(function() {
+      closeCustomAlert();
+    }, 4000);
+  }
+
+  // Custom Confirmation Function
+  function showCustomConfirm(type, title, message, onConfirm) {
+    var confirmDiv = document.createElement('div');
+    confirmDiv.className = 'custom-alert';
+    
+    var icon = '';
+    switch(type) {
+      case 'warning':
+        icon = '⚠️';
+        break;
+      case 'danger':
+        icon = '❌';
+        break;
+      default:
+        icon = '❓';
+    }
+    
+    confirmDiv.innerHTML = 
+      '<div class="alert-content">' +
+        '<div class="alert-icon ' + type + '">' + icon + '</div>' +
+        '<h3 class="alert-title">' + title + '</h3>' +
+        '<p class="alert-message">' + message + '</p>' +
+        '<div class="alert-branding">We at enlighten.org value your contributions</div>' +
+        '<div class="alert-actions">' +
+          '<button class="alert-btn secondary" onclick="closeCustomAlert()">Cancel</button>' +
+          '<button class="alert-btn danger" onclick="confirmAction()">Confirm</button>' +
+        '</div>' +
+      '</div>';
+    
+    document.body.appendChild(confirmDiv);
+    
+    // Store the confirm callback
+    window.pendingConfirm = onConfirm;
+  }
+
+  // Close custom alert/confirm
+  function closeCustomAlert() {
+    var alert = document.querySelector('.custom-alert');
+    if (alert) {
+      alert.remove();
+    }
+    window.pendingConfirm = null;
+  }
+
+  // Confirm action
+  function confirmAction() {
+    if (window.pendingConfirm) {
+      window.pendingConfirm();
+    }
+    closeCustomAlert();
+  }
+
   // Edit story function
   function editStory(storyId) {
     var stories = JSON.parse(localStorage.getItem('educationStories') || '[]');
@@ -3072,19 +3163,19 @@
       stories[index] = updatedStory;
       localStorage.setItem('educationStories', JSON.stringify(stories));
       loadStories();
-      alert('Your story has been updated successfully!');
+      showCustomAlert('success', 'Story Updated!', 'Your story has been updated successfully!', 'We at enlighten.org are happy that you shared your story with us.');
     }
   }
 
   // Delete story function
   function deleteStory(storyId) {
-    if (confirm('Are you sure you want to delete this story? This action cannot be undone.')) {
+    showCustomConfirm('warning', 'Delete Story', 'Are you sure you want to delete this story? This action cannot be undone.', function() {
       var stories = JSON.parse(localStorage.getItem('educationStories') || '[]');
       var filteredStories = stories.filter(function(s) { return s.id != storyId; });
       localStorage.setItem('educationStories', JSON.stringify(filteredStories));
       loadStories();
-      alert('Your story has been deleted.');
-    }
+      showCustomAlert('success', 'Story Deleted', 'Your story has been deleted.', 'We at enlighten.org appreciate your contribution to our community.');
+    });
   }
 
   // Close edit modal
@@ -3126,6 +3217,8 @@
   window.editStory = editStory;
   window.deleteStory = deleteStory;
   window.closeEditModal = closeEditModal;
+  window.closeCustomAlert = closeCustomAlert;
+  window.confirmAction = confirmAction;
 
   document.addEventListener('DOMContentLoaded', function () {
     var select = document.getElementById('state');
@@ -3157,11 +3250,11 @@
           content: formData.get('content')
         };
 
-        if (story.title && story.location && story.content) {
-          saveStory(story);
-          storyForm.reset();
-          alert('Thank you for sharing your story! It has been added to our community stories.');
-        }
+          if (story.title && story.location && story.content) {
+            saveStory(story);
+            storyForm.reset();
+            showCustomAlert('success', 'Thank You!', 'Thank you for sharing your story! It has been added to our community stories.', 'We at enlighten.org are happy that you shared with us.');
+          }
       });
     }
 

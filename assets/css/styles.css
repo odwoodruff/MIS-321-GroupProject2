@@ -855,7 +855,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.8);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -989,9 +989,138 @@ body {
   box-shadow: 0 0 0 3px rgba(52, 211, 153, 0.1);
 }
 
-#editStoryForm textarea {
-  resize: vertical;
-  min-height: 120px;
+  #editStoryForm textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+/* Custom Alert/Confirmation Styles */
+.custom-alert {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.alert-content {
+  background: var(--bg-secondary);
+  border-radius: 16px;
+  padding: 32px;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--border);
+  animation: slideIn 0.3s ease-out;
+}
+
+.alert-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.alert-icon.success {
+  color: var(--accent);
+}
+
+.alert-icon.warning {
+  color: #f59e0b;
+}
+
+.alert-icon.danger {
+  color: #ef4444;
+}
+
+.alert-title {
+  color: var(--text);
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 16px;
+}
+
+.alert-message {
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0 0 24px;
+}
+
+.alert-branding {
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 14px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.alert-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.alert-btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 16px;
+  min-width: 100px;
+}
+
+.alert-btn.primary {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+  color: white;
+}
+
+.alert-btn.primary:hover {
+  background: linear-gradient(135deg, var(--accent-2) 0%, var(--accent-3) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(52, 211, 153, 0.3);
+}
+
+.alert-btn.secondary {
+  background: var(--bg-primary);
+  color: var(--muted);
+  border: 1px solid var(--border);
+}
+
+.alert-btn.secondary:hover {
+  background: var(--border);
+  color: var(--text);
+}
+
+.alert-btn.danger {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  color: white;
+}
+
+.alert-btn.danger:hover {
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(239, 68, 68, 0.3);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 /* State Selection */
