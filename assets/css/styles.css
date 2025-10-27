@@ -488,101 +488,35 @@ body {
 /* Location Content */
 .location-content {
   margin: 48px 0;
-  padding: 40px 20px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.01) 100%);
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
 }
-
 .location-content h2 {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 32px;
   color: var(--accent);
-  font-size: 32px;
-  font-weight: 700;
-  position: relative;
-}
-
-.location-content h2::after {
-  content: '';
-  position: absolute;
-  bottom: -12px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 3px;
-  background: linear-gradient(90deg, var(--accent) 0%, var(--accent-2) 100%);
-  border-radius: 2px;
 }
 
 .location-header {
   text-align: center;
-  margin-bottom: 40px;
-  padding: 24px;
-  background: linear-gradient(135deg, rgba(52, 211, 153, 0.1) 0%, rgba(34, 197, 94, 0.05) 100%);
-  border-radius: 16px;
-  border: 1px solid rgba(52, 211, 153, 0.2);
-  position: relative;
-  overflow: hidden;
+  margin-bottom: 32px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  border: 1px solid var(--border);
 }
-
-.location-header::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-  animation: shimmer 3s infinite;
-}
-
-@keyframes shimmer {
-  0% { left: -100%; }
-  100% { left: 100%; }
-}
-
 .location-header h3 {
   color: var(--accent);
   margin: 0;
-  font-size: 28px;
-  font-weight: 700;
-  position: relative;
-  z-index: 1;
+  font-size: 24px;
 }
 
 .section-header {
-  margin: 40px 0 24px;
+  margin: 24px 0 16px;
   text-align: center;
-  position: relative;
 }
-
 .section-header h4 {
   color: var(--accent-2);
   margin: 0;
-  font-size: 22px;
-  font-weight: 600;
-  position: relative;
-  display: inline-block;
-  padding: 0 20px;
-}
-
-.section-header h4::before,
-.section-header h4::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  width: 30px;
-  height: 2px;
-  background: linear-gradient(90deg, var(--accent-2) 0%, var(--accent-3) 100%);
-}
-
-.section-header h4::before {
-  left: -30px;
-}
-
-.section-header h4::after {
-  right: -30px;
+  font-size: 18px;
 }
 
 .location-cards {
@@ -595,24 +529,16 @@ body {
 .challenges-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 20px;
-  margin-bottom: 32px;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.02);
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  gap: 16px;
+  margin-bottom: 24px;
 }
 
 /* Specific grid for resources to ensure they line up in a row */
 .resources-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 20px;
-  margin-bottom: 32px;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.02);
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  gap: 16px;
+  margin-bottom: 24px;
 }
 
 @media (min-width: 768px) {
@@ -644,109 +570,42 @@ body {
 }
 
 .location-card {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
-  padding: 24px;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-
-.location-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, var(--accent) 0%, var(--accent-2) 100%);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
 .location-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
-  border-color: rgba(52, 211, 153, 0.3);
-}
-
-.location-card:hover::before {
-  opacity: 1;
-}
-
-.location-card h5 {
-  margin: 0 0 16px;
-  font-size: 18px;
-  font-weight: 600;
-  color: var(--text);
-}
-
-.location-card p {
-  margin: 0 0 20px;
-  color: var(--muted);
-  line-height: 1.6;
-  font-size: 15px;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
 .challenge-card {
   border-left: 4px solid var(--accent-2);
-  background: linear-gradient(135deg, rgba(34, 197, 94, 0.05) 0%, rgba(255, 255, 255, 0.03) 100%);
 }
-
 .challenge-card h5 {
   color: var(--accent-2);
-  margin: 0 0 16px;
-  font-size: 18px;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.challenge-card h5::before {
-  content: '⚠️';
+  margin: 0 0 12px;
   font-size: 16px;
 }
 
 .resource-card {
   border-left: 4px solid var(--accent-3);
-  background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(255, 255, 255, 0.03) 100%);
 }
-
 .resource-card h5 {
   color: var(--accent-3);
-  margin: 0 0 16px;
-  font-size: 18px;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.resource-card h5::before {
-  content: '🔗';
+  margin: 0 0 12px;
   font-size: 16px;
 }
 
 .opportunities-card {
   border-left: 4px solid var(--accent);
   grid-column: 1 / -1;
-  background: linear-gradient(135deg, rgba(52, 211, 153, 0.05) 0%, rgba(255, 255, 255, 0.03) 100%);
 }
-
 .opportunities-card h5 {
   color: var(--accent);
-  margin: 0 0 16px;
-  font-size: 18px;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.opportunities-card h5::before {
-  content: '🌟';
+  margin: 0 0 12px;
   font-size: 16px;
 }
 
@@ -758,30 +617,7 @@ body {
 .location-card .actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 16px;
-}
-
-.location-card .actions .btn {
-  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
-  color: #0b1220;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 14px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.location-card .actions .btn:hover {
-  background: linear-gradient(135deg, var(--accent-2) 0%, var(--accent-3) 100%);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(52, 211, 153, 0.3);
+  gap: 8px;
 }
 
 /* Success Stories */
