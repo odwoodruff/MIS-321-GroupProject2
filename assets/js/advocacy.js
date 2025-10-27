@@ -18,9 +18,9 @@
         'Limited access to advanced placement courses in rural areas'
       ],
       resources: [
-        { name: 'Alabama Education Association', url: 'https://www.aeanea.org' },
-        { name: 'Alabama State Department of Education', url: 'https://www.alsde.edu' },
-        { name: 'Support Alabama Schools', url: 'https://www.alabamaeducation.org' }
+        { name: 'Alabama Education Association', url: 'https://myaea.org/' },
+        { name: 'Alabama State Department of Education', url: 'https://www.alabamaachieves.org/' },
+        { name: 'Support Alabama Schools', url: 'https://www.alabamaachieves.org/support-services/' }
       ]
     },
     'Birmingham': {
@@ -32,7 +32,7 @@
       ],
       resources: [
         { name: 'Birmingham Education Foundation', url: 'https://www.birminghameducation.org' },
-        { name: 'Alabama Education Association', url: 'https://www.aeanea.org' },
+        { name: 'Alabama Education Association', url: 'https://www.aeaonline.org' },
         { name: 'Birmingham City Schools', url: 'https://www.bhamcityschools.org' }
       ]
     },
@@ -1286,7 +1286,7 @@
           { label: 'Contact Alabama Legislators', url: 'https://www.legislature.state.al.us' }
         ],
         teacher: [
-          { label: 'Alabama Education Association', url: 'https://www.aeanea.org' },
+          { label: 'Alabama Education Association', url: 'https://www.aeaonline.org' },
           { label: 'Alabama Teacher Support', url: 'https://www.alsde.edu/sec/ar/Pages/home.aspx' },
           { label: 'Volunteer in Alabama Schools', url: 'https://www.volunteermatch.org/search?l=Alabama&categories=13' }
         ],
