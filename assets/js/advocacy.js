@@ -2744,6 +2744,10 @@
       container.appendChild(challengesContainer);
     }
 
+    // Create wrapper container for resources and opportunities side by side
+    var resourcesOpportunitiesWrapper = document.createElement('div');
+    resourcesOpportunitiesWrapper.className = 'resources-opportunities-container';
+
     // Create resource cards - merged into one box
     if (content.resources && content.resources.length > 0) {
       // Create a single container for all resources with integrated header
@@ -2764,7 +2768,7 @@
       resourcesContent += '</div>';
       
       resourcesContainer.innerHTML = resourcesContent;
-      container.appendChild(resourcesContainer);
+      resourcesOpportunitiesWrapper.appendChild(resourcesContainer);
     }
 
     // Add additional local opportunities - merged into one box
@@ -2786,7 +2790,10 @@
       '</div>';
     
     opportunitiesContainer.innerHTML = opportunitiesContent;
-    container.appendChild(opportunitiesContainer);
+    resourcesOpportunitiesWrapper.appendChild(opportunitiesContainer);
+    
+    // Add the wrapper to the main container
+    container.appendChild(resourcesOpportunitiesWrapper);
   }
 
   function populateStates(selectEl) {
