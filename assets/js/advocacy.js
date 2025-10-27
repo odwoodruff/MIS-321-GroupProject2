@@ -2744,37 +2744,26 @@
       container.appendChild(challengesContainer);
     }
 
-    // Create resource cards
+    // Create resource cards - merged into one box
     if (content.resources && content.resources.length > 0) {
-      var resourcesHeader = document.createElement('div');
-      resourcesHeader.className = 'section-header';
-      resourcesHeader.innerHTML = '<h4>Local Resources & Action Items</h4>';
-      container.appendChild(resourcesHeader);
-
-      // Create a container specifically for the resources
+      // Create a single container for all resources with integrated header
       var resourcesContainer = document.createElement('div');
-      resourcesContainer.className = 'resources-grid';
-
-      content.resources.forEach(function(resource) {
-        var card = document.createElement('div');
-        card.className = 'location-card resource-card';
-        
-        var actions = document.createElement('div');
-        actions.className = 'actions';
-        
-        var link = document.createElement('a');
-        link.href = resource.url;
-        link.target = '_blank';
-        link.rel = 'noopener noreferrer';
-        link.className = 'btn';
-        link.textContent = 'Learn More';
-        
-        actions.appendChild(link);
-        card.innerHTML = '<h5>' + resource.name + '</h5><p>Local resource for ' + content.state + '</p>';
-        card.appendChild(actions);
-        resourcesContainer.appendChild(card);
-      });
+      resourcesContainer.className = 'resources-container';
       
+      var resourcesContent = '<h4>Local Resources & Action Items</h4><div class="resources-list">';
+      content.resources.forEach(function(resource) {
+        resourcesContent += 
+          '<div class="resource-item">' +
+            '<h5>' + resource.name + '</h5>' +
+            '<p>Local resource for ' + content.state + '</p>' +
+            '<div class="actions">' +
+              '<a href="' + resource.url + '" target="_blank" rel="noopener noreferrer" class="btn">Learn More</a>' +
+            '</div>' +
+          '</div>';
+      });
+      resourcesContent += '</div>';
+      
+      resourcesContainer.innerHTML = resourcesContent;
       container.appendChild(resourcesContainer);
     }
 

@@ -666,33 +666,98 @@ body {
   }
 }
 
-.resources-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
-  margin-bottom: 32px;
-  padding: 24px;
-  background: rgba(255, 255, 255, 0.02);
+/* Resources container - single box with integrated header */
+.resources-container {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border);
   border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 24px;
+  margin-bottom: 32px;
+  border-left: 4px solid var(--accent-3);
+}
+
+.resources-container h4 {
+  color: var(--accent-3);
+  margin: 0 0 24px;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.resources-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.resource-item {
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.resource-item h5 {
+  color: var(--accent-3);
+  margin: 0 0 12px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.resource-item p {
+  color: var(--muted);
+  margin: 0 0 16px;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+.resource-item .actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.resource-item .actions .btn {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+  color: #0b1220;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.resource-item .actions .btn:hover {
+  background: linear-gradient(135deg, var(--accent-2) 0%, var(--accent-3) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(52, 211, 153, 0.3);
+}
+
+@media (min-width: 768px) {
+  .resources-list {
+    flex-direction: row;
+    gap: 16px;
+  }
+  
+  .resource-item {
+    flex: 1;
+  }
 }
 
 @media (min-width: 768px) {
   .location-cards {
     grid-template-columns: repeat(2, 1fr);
   }
-  
-  .resources-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 
 @media (min-width: 1024px) {
   .location-cards {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  
-  .resources-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
