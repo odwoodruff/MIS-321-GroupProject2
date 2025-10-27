@@ -2720,11 +2720,17 @@
 
     container.innerHTML = '';
 
+    // Add location header
+    var locationHeader = document.createElement('div');
+    locationHeader.className = 'location-header';
+    locationHeader.innerHTML = '<h3>📍 ' + location + ', ' + content.state + '</h3>';
+    container.appendChild(locationHeader);
+
     // Create challenge cards
     if (content.challenges && content.challenges.length > 0) {
       var challengesHeader = document.createElement('div');
       challengesHeader.className = 'section-header';
-      challengesHeader.innerHTML = '<h4>Top 3 Educational Challenges in ' + location + ', ' + content.state + '</h4>';
+      challengesHeader.innerHTML = '<h4>Top 3 Educational Challenges in Your Area</h4>';
       container.appendChild(challengesHeader);
 
       // Create a single container for all challenges
@@ -2747,7 +2753,7 @@
     if (content.resources && content.resources.length > 0) {
       var resourcesHeader = document.createElement('div');
       resourcesHeader.className = 'section-header';
-      resourcesHeader.innerHTML = '<h4>Local Resources & Action Items in ' + location + ', ' + content.state + '</h4>';
+      resourcesHeader.innerHTML = '<h4>Local Resources & Action Items</h4>';
       container.appendChild(resourcesHeader);
 
       // Create a container specifically for the resources
@@ -2780,7 +2786,7 @@
     // Add additional local opportunities
     var opportunitiesHeader = document.createElement('div');
     opportunitiesHeader.className = 'section-header';
-    opportunitiesHeader.innerHTML = '<h4>Support ' + content.state + ' Schools</h4>';
+    opportunitiesHeader.innerHTML = '<h4>Get Involved Locally</h4>';
     container.appendChild(opportunitiesHeader);
 
     var opportunitiesCard = document.createElement('div');
