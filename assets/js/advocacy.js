@@ -2744,32 +2744,7 @@
       container.appendChild(challengesContainer);
     }
 
-    // Create bottom row container for resources and opportunities side by side
-    var bottomRowContainer = document.createElement('div');
-    bottomRowContainer.className = 'bottom-row-container';
-
-    // Add additional local opportunities - merged into one box (left side)
-    var opportunitiesContainer = document.createElement('div');
-    opportunitiesContainer.className = 'opportunities-container';
-    
-    var opportunitiesContent = 
-      '<h4>Get Involved Locally</h4>' +
-      '<div class="opportunities-list">' +
-        '<div class="opportunity-item">' +
-          '<h5>Volunteer & Donate</h5>' +
-          '<p>Find local volunteer opportunities, donation pages, and petitions in your area.</p>' +
-          '<div class="actions">' +
-            '<a href="https://www.volunteermatch.org/search?l=' + encodeURIComponent(location) + '&categories=13" target="_blank" class="btn">Find Volunteer Opportunities</a>' +
-            '<a href="https://www.donorschoose.org/search?q=' + encodeURIComponent(location) + '" target="_blank" class="btn">Donate to Local Schools</a>' +
-            '<a href="https://www.change.org/search?q=education+' + encodeURIComponent(location) + '" target="_blank" class="btn">Sign Petitions</a>' +
-          '</div>' +
-        '</div>' +
-      '</div>';
-    
-    opportunitiesContainer.innerHTML = opportunitiesContent;
-    bottomRowContainer.appendChild(opportunitiesContainer);
-
-    // Create resource cards - merged into one box (right side)
+    // Create resource cards - merged into one box
     if (content.resources && content.resources.length > 0) {
       // Create a single container for all resources with integrated header
       var resourcesContainer = document.createElement('div');
@@ -2789,11 +2764,29 @@
       resourcesContent += '</div>';
       
       resourcesContainer.innerHTML = resourcesContent;
-      bottomRowContainer.appendChild(resourcesContainer);
+      container.appendChild(resourcesContainer);
     }
 
-    // Add the bottom row container to the main container
-    container.appendChild(bottomRowContainer);
+    // Add additional local opportunities - merged into one box
+    var opportunitiesContainer = document.createElement('div');
+    opportunitiesContainer.className = 'opportunities-container';
+    
+    var opportunitiesContent = 
+      '<h4>Get Involved Locally</h4>' +
+      '<div class="opportunities-list">' +
+        '<div class="opportunity-item">' +
+          '<h5>Volunteer & Donate</h5>' +
+          '<p>Find local volunteer opportunities, donation pages, and petitions in your area.</p>' +
+          '<div class="actions">' +
+            '<a href="https://www.volunteermatch.org/search?l=' + encodeURIComponent(location) + '&categories=13" target="_blank" class="btn">Find Volunteer Opportunities</a>' +
+            '<a href="https://www.donorschoose.org/search?q=' + encodeURIComponent(location) + '" target="_blank" class="btn">Donate to Local Schools</a>' +
+            '<a href="https://www.change.org/search?q=education+' + encodeURIComponent(location) + '" target="_blank" class="btn">Sign Petitions</a>' +
+          '</div>' +
+        '</div>' +
+      '</div>';
+    
+    opportunitiesContainer.innerHTML = opportunitiesContent;
+    container.appendChild(opportunitiesContainer);
   }
 
   function populateStates(selectEl) {
