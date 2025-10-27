@@ -214,6 +214,81 @@ body {
   color: var(--accent);
 }
 
+/* Location loading and error states */
+.location-loading {
+  text-align: center;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 16px;
+  border: 1px solid var(--border);
+}
+
+.location-loading h3 {
+  color: var(--accent);
+  margin-bottom: 16px;
+  font-size: 24px;
+}
+
+.location-loading p {
+  color: var(--muted);
+  font-size: 16px;
+  margin: 0;
+}
+
+.location-error, .location-prompt {
+  text-align: center;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent-2);
+}
+
+.location-error h3, .location-prompt h3 {
+  color: var(--accent-2);
+  margin-bottom: 16px;
+  font-size: 24px;
+}
+
+.location-error p, .location-prompt p {
+  color: var(--muted);
+  font-size: 16px;
+  margin-bottom: 24px;
+}
+
+.location-error .btn, .location-prompt .btn {
+  margin: 0 8px;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+  color: #0b1220;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.location-error .btn:hover, .location-prompt .btn:hover {
+  background: linear-gradient(135deg, var(--accent-2) 0%, var(--accent-3) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(52, 211, 153, 0.3);
+}
+
+.location-error .btn-secondary, .location-prompt .btn-secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.location-error .btn-secondary:hover, .location-prompt .btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.1);
+}
+
 .location-header {
   text-align: center;
   margin-bottom: 32px;
