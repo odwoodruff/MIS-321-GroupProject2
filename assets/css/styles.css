@@ -69,52 +69,81 @@ body {
 
 /* Hero */
 .hero { 
-  padding: 64px 0 48px; 
+  padding: 80px 0 60px; 
   text-align: center;
+  background: linear-gradient(135deg, rgba(52, 211, 153, 0.05) 0%, rgba(96, 165, 250, 0.05) 100%);
+  border-radius: 24px;
+  margin-bottom: 60px;
+  position: relative;
+  overflow: hidden;
 }
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(52, 211, 153, 0.1) 0%, rgba(96, 165, 250, 0.1) 100%);
+  opacity: 0.3;
+  z-index: -1;
+}
+
 .hero h1 { 
-  font-size: 48px; 
-  margin: 0 0 16px; 
+  font-size: 56px; 
+  margin: 0 0 24px; 
   line-height: 1.1; 
   background: linear-gradient(135deg, var(--accent), var(--accent-2), var(--accent-3)); 
   -webkit-background-clip: text; 
   background-clip: text; 
-  color: transparent; 
+  color: transparent;
+  font-weight: 800;
+  letter-spacing: -0.02em;
 }
+
 .hero-subtext { 
-  font-size: 20px; 
-  margin: 0 0 32px; 
+  font-size: 22px; 
+  margin: 0 0 40px; 
   color: var(--muted); 
-  max-width: 600px; 
+  max-width: 700px; 
   margin-left: auto; 
-  margin-right: auto; 
+  margin-right: auto;
+  line-height: 1.6;
+  font-weight: 400;
 }
+
 .cta-button {
   background: linear-gradient(135deg, var(--accent-2), var(--accent-3));
   color: #0b1220;
   border: none;
   padding: 16px 32px;
   border-radius: 12px;
-  font-weight: 700;
   font-size: 18px;
+  font-weight: 700;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  margin-bottom: 32px;
+  transition: all 0.3s ease;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 15px rgba(96, 165, 250, 0.3);
 }
+
 .cta-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(96, 165, 250, 0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(96, 165, 250, 0.4);
 }
+
 .hero-image {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
-  border-radius: 16px;
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.1);
 }
+
 .hero-image img {
   width: 100%;
-  height: 400px;
+  height: 450px;
   object-fit: cover;
 }
 
@@ -431,9 +460,14 @@ body {
 .impact-sections {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 24px;
-  margin: 48px 0;
+  gap: 32px;
+  margin: 60px 0;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
+
 @media (min-width: 768px) {
   .impact-sections {
     grid-template-columns: repeat(3, 1fr);
@@ -441,58 +475,104 @@ body {
 }
 
 .impact-card {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 24px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 32px;
   text-align: center;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
+
+.impact-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent) 0%, var(--accent-2) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
 .impact-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  border-color: rgba(52, 211, 153, 0.3);
 }
+
+.impact-card:hover::before {
+  opacity: 1;
+}
+
 .impact-card h3 {
   color: var(--accent);
-  margin: 0 0 16px;
-  font-size: 20px;
+  margin: 0 0 20px;
+  font-size: 22px;
+  font-weight: 700;
 }
+
 .impact-card p {
   color: var(--muted);
-  line-height: 1.6;
+  line-height: 1.7;
   margin: 0;
+  font-size: 16px;
 }
 
 /* Quote Section */
 .quote-section {
-  margin: 48px 0;
+  margin: 60px 0;
   text-align: center;
-  padding: 32px;
-  background: rgba(255, 255, 255, 0.03);
-  border-radius: 16px;
-  border-left: 4px solid var(--accent);
+  padding: 40px;
+  background: linear-gradient(135deg, rgba(52, 211, 153, 0.08) 0%, rgba(96, 165, 250, 0.08) 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(52, 211, 153, 0.2);
+  position: relative;
+  overflow: hidden;
 }
+
+.quote-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent) 0%, var(--accent-2) 100%);
+}
+
 .quote-section blockquote {
-  font-size: 24px;
+  font-size: 28px;
   font-style: italic;
-  margin: 0 0 16px;
+  margin: 0 0 20px;
   color: var(--text);
   line-height: 1.4;
+  font-weight: 500;
 }
+
 .quote-section cite {
   color: var(--accent-2);
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
 }
 
 /* Location Content */
 .location-content {
-  margin: 48px 0;
+  margin: 60px 0;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
+
 .location-content h2 {
   text-align: center;
-  margin-bottom: 32px;
+  margin-bottom: 40px;
   color: var(--accent);
+  font-size: 36px;
+  font-weight: 700;
 }
 
 .location-header {
@@ -662,20 +742,27 @@ body {
 
 /* Success Stories */
 .success-stories {
-  margin: 48px 0;
-  padding: 32px;
-  background: rgba(255, 255, 255, 0.03);
-  border-radius: 16px;
+  margin: 60px 0;
+  padding: 40px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.02) 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
+
 .success-stories h2 {
   text-align: center;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
   color: var(--accent);
+  font-size: 32px;
+  font-weight: 700;
 }
+
 .success-stories > p {
   text-align: center;
   color: var(--muted);
-  margin-bottom: 32px;
+  margin-bottom: 40px;
+  font-size: 18px;
+  line-height: 1.6;
 }
 
 .story-form {
@@ -1199,20 +1286,27 @@ body {
 
 /* State Selection */
 .state-selection {
-  margin: 48px 0;
-  padding: 32px;
-  background: rgba(255, 255, 255, 0.03);
-  border-radius: 16px;
+  margin: 60px 0;
+  padding: 40px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.02) 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
+
 .state-selection h2 {
   text-align: center;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
   color: var(--accent);
+  font-size: 32px;
+  font-weight: 700;
 }
+
 .state-selection > p {
   text-align: center;
   color: var(--muted);
-  margin-bottom: 24px;
+  margin-bottom: 32px;
+  font-size: 18px;
+  line-height: 1.6;
 }
 
 /* Enhanced State Selector */
