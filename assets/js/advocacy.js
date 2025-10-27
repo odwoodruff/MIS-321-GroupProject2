@@ -2678,10 +2678,12 @@
   function handleGeolocationError(error) {
     var locationContainer = document.getElementById('location-content');
     var errorMessage = '';
+    var showLocationButton = false;
     
     switch(error.code) {
       case error.PERMISSION_DENIED:
-        errorMessage = 'Location access denied. Please enable location permissions to see personalized content.';
+        errorMessage = 'Location access denied. Enable location permissions to see personalized education content for your area.';
+        showLocationButton = true;
         break;
       case error.POSITION_UNAVAILABLE:
         errorMessage = 'Location information unavailable. Using default location.';
@@ -2695,19 +2697,30 @@
     }
     
     if (locationContainer) {
-      locationContainer.innerHTML = 
-        '<div class="location-error">' +
-          '<h3>Location Detection</h3>' +
-          '<p>' + errorMessage + '</p>' +
-          '<button onclick="retryLocationDetection()" class="btn">Try Again</button>' +
-          '<button onclick="useDefaultLocation()" class="btn btn-secondary">Use Default Location</button>' +
-        '</div>';
+      if (showLocationButton) {
+        // Show persistent location button for permission denied
+        locationContainer.innerHTML = 
+          '<div class="location-prompt">' +
+            '<h3>📍 Turn on Location to View Local Challenges and Resources</h3>' +
+            '<p>' + errorMessage + '</p>' +
+            '<button onclick="retryLocationDetection()" class="btn">Turn On Location</button>' +
+          '</div>';
+      } else {
+        // Show retry options for other errors
+        locationContainer.innerHTML = 
+          '<div class="location-error">' +
+            '<h3>Location Detection</h3>' +
+            '<p>' + errorMessage + '</p>' +
+            '<button onclick="retryLocationDetection()" class="btn">Try Again</button>' +
+            '<button onclick="useDefaultLocation()" class="btn btn-secondary">Use Default Location</button>' +
+          '</div>';
+        
+        // Fallback to IP-based detection after a delay for non-permission errors
+        setTimeout(function() {
+          detectLocationByIP();
+        }, 2000);
+      }
     }
-    
-    // Fallback to IP-based detection after a delay
-    setTimeout(function() {
-      detectLocationByIP();
-    }, 2000);
   }
 
   // Show location permission prompt
@@ -2716,10 +2729,9 @@
     if (locationContainer) {
       locationContainer.innerHTML = 
         '<div class="location-prompt">' +
-          '<h3>Enable Location Access</h3>' +
+          '<h3>📍 Turn on Location to View Local Challenges and Resources</h3>' +
           '<p>To show you personalized education content for your area, please enable location access in your browser.</p>' +
-          '<button onclick="retryLocationDetection()" class="btn">Enable Location</button>' +
-          '<button onclick="useDefaultLocation()" class="btn btn-secondary">Skip Location</button>' +
+          '<button onclick="retryLocationDetection()" class="btn">Turn On Location</button>' +
         '</div>';
     }
   }
