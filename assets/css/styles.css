@@ -533,14 +533,6 @@ body {
   margin-bottom: 24px;
 }
 
-/* Specific grid for resources to ensure they line up in a row */
-.resources-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 16px;
-  margin-bottom: 24px;
-}
-
 @media (min-width: 768px) {
   .location-cards {
     grid-template-columns: repeat(2, 1fr);
@@ -548,10 +540,6 @@ body {
   
   .challenges-grid {
     grid-template-columns: repeat(3, 1fr);
-  }
-  
-  .resources-grid {
-    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -561,10 +549,6 @@ body {
   }
   
   .challenges-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  
-  .resources-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
