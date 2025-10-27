@@ -615,15 +615,15 @@ body {
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid var(--border);
   border-radius: 16px;
-  padding: 32px;
-  margin-bottom: 32px;
+  padding: 20px;
+  margin-bottom: 24px;
   border-left: 4px solid var(--accent-2);
 }
 
 .challenges-container h4 {
   color: var(--accent-2);
-  margin: 0 0 32px;
-  font-size: 22px;
+  margin: 0 0 20px;
+  font-size: 18px;
   font-weight: 600;
   text-align: center;
 }
@@ -631,11 +631,11 @@ body {
 .challenges-list {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 16px;
 }
 
 .challenge-item {
-  padding: 20px;
+  padding: 16px;
   background: rgba(255, 255, 255, 0.03);
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -644,8 +644,8 @@ body {
 
 .challenge-item h5 {
   color: var(--accent-2);
-  margin: 0 0 16px;
-  font-size: 18px;
+  margin: 0 0 12px;
+  font-size: 16px;
   font-weight: 600;
 }
 
@@ -653,18 +653,18 @@ body {
   color: var(--muted);
   margin: 0;
   line-height: 1.6;
-  font-size: 15px;
+  font-size: 14px;
 }
 
 @media (min-width: 768px) {
   .challenges-list {
     flex-direction: row;
-    gap: 20px;
+    gap: 16px;
   }
   
   .challenge-item {
     flex: 1;
-    padding: 24px 20px;
+    padding: 18px 16px;
   }
 }
 
@@ -673,15 +673,15 @@ body {
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid var(--border);
   border-radius: 16px;
-  padding: 32px;
-  margin-bottom: 32px;
+  padding: 20px;
+  margin-bottom: 24px;
   border-left: 4px solid var(--accent-3);
 }
 
 .resources-container h4 {
   color: var(--accent-3);
-  margin: 0 0 32px;
-  font-size: 22px;
+  margin: 0 0 20px;
+  font-size: 18px;
   font-weight: 600;
   text-align: center;
 }
@@ -689,11 +689,11 @@ body {
 .resources-list {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 16px;
 }
 
 .resource-item {
-  padding: 20px;
+  padding: 16px;
   background: rgba(255, 255, 255, 0.03);
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -702,16 +702,16 @@ body {
 
 .resource-item h5 {
   color: var(--accent-3);
-  margin: 0 0 16px;
-  font-size: 18px;
+  margin: 0 0 12px;
+  font-size: 16px;
   font-weight: 600;
 }
 
 .resource-item p {
   color: var(--muted);
-  margin: 0 0 20px;
+  margin: 0 0 16px;
   line-height: 1.6;
-  font-size: 15px;
+  font-size: 14px;
 }
 
 .resource-item .actions {
@@ -724,7 +724,7 @@ body {
   background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
   color: #0b1220;
   border: none;
-  padding: 12px 24px;
+  padding: 10px 20px;
   border-radius: 8px;
   font-weight: 600;
   font-size: 14px;
@@ -745,12 +745,12 @@ body {
 @media (min-width: 768px) {
   .resources-list {
     flex-direction: row;
-    gap: 20px;
+    gap: 16px;
   }
   
   .resource-item {
     flex: 1;
-    padding: 24px 20px;
+    padding: 18px 16px;
   }
 }
 
@@ -801,15 +801,17 @@ body {
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid var(--border);
   border-radius: 16px;
-  padding: 32px;
-  margin-bottom: 32px;
+  padding: 20px;
+  margin-bottom: 24px;
   border-left: 4px solid var(--accent);
+  width: 100%;
+  max-width: none;
 }
 
 .opportunities-container h4 {
   color: var(--accent);
-  margin: 0 0 32px;
-  font-size: 22px;
+  margin: 0 0 20px;
+  font-size: 18px;
   font-weight: 600;
   text-align: center;
 }
@@ -817,29 +819,31 @@ body {
 .opportunities-list {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 16px;
+  width: 100%;
 }
 
 .opportunity-item {
-  padding: 20px;
+  padding: 16px;
   background: rgba(255, 255, 255, 0.03);
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   text-align: center;
+  width: 100%;
 }
 
 .opportunity-item h5 {
   color: var(--accent);
-  margin: 0 0 16px;
-  font-size: 18px;
+  margin: 0 0 12px;
+  font-size: 16px;
   font-weight: 600;
 }
 
 .opportunity-item p {
   color: var(--muted);
-  margin: 0 0 20px;
+  margin: 0 0 16px;
   line-height: 1.6;
-  font-size: 15px;
+  font-size: 14px;
 }
 
 .opportunity-item .actions {
@@ -847,13 +851,14 @@ body {
   justify-content: center;
   gap: 12px;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 .opportunity-item .actions .btn {
   background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
   color: #0b1220;
   border: none;
-  padding: 12px 24px;
+  padding: 10px 20px;
   border-radius: 8px;
   font-weight: 600;
   font-size: 14px;
@@ -874,12 +879,12 @@ body {
 @media (min-width: 768px) {
   .opportunities-list {
     flex-direction: row;
-    gap: 20px;
+    gap: 16px;
   }
   
   .opportunity-item {
     flex: 1;
-    padding: 24px 20px;
+    padding: 18px 16px;
   }
 }
 
