@@ -2733,17 +2733,19 @@
       challengesHeader.innerHTML = '<h4>Top 3 Educational Challenges in Your Area</h4>';
       container.appendChild(challengesHeader);
 
-      // Create a container specifically for the 3 challenges
+      // Create a single container for all challenges
       var challengesContainer = document.createElement('div');
-      challengesContainer.className = 'challenges-grid';
+      challengesContainer.className = 'challenges-container';
       
+      var challengesContent = '<div class="challenges-list">';
       content.challenges.forEach(function(challenge, index) {
-        var card = document.createElement('div');
-        card.className = 'location-card challenge-card';
-        card.innerHTML = '<h5>Challenge ' + (index + 1) + '</h5><p>' + challenge + '</p>';
-        challengesContainer.appendChild(card);
+        var challengeNumbers = ['One', 'Two', 'Three'];
+        var challengeNumber = challengeNumbers[index] || (index + 1);
+        challengesContent += '<div class="challenge-item"><h5>Challenge ' + challengeNumber + '</h5><p>' + challenge + '</p></div>';
       });
+      challengesContent += '</div>';
       
+      challengesContainer.innerHTML = challengesContent;
       container.appendChild(challengesContainer);
     }
 
@@ -2753,6 +2755,10 @@
       resourcesHeader.className = 'section-header';
       resourcesHeader.innerHTML = '<h4>Local Resources & Action Items</h4>';
       container.appendChild(resourcesHeader);
+
+      // Create a container specifically for the resources
+      var resourcesContainer = document.createElement('div');
+      resourcesContainer.className = 'resources-grid';
 
       content.resources.forEach(function(resource) {
         var card = document.createElement('div');
@@ -2771,8 +2777,10 @@
         actions.appendChild(link);
         card.innerHTML = '<h5>' + resource.name + '</h5><p>Local resource for ' + content.state + '</p>';
         card.appendChild(actions);
-        container.appendChild(card);
+        resourcesContainer.appendChild(card);
       });
+      
+      container.appendChild(resourcesContainer);
     }
 
     // Add additional local opportunities
@@ -2843,10 +2851,10 @@
         });
       } else {
         // Fallback to default actions
-        actions.appendChild(createActionButton('Donate to a local classroom', 'https://www.donorschoose.org/'));
-        actions.appendChild(createActionButton('Contact your state senators', 'https://www.senate.gov/senators/senators-contact.htm'));
-        actions.appendChild(createActionButton('Find local advocacy events', 'https://www.eventbrite.com/d/online/education-advocacy/'));
-        actions.appendChild(createActionButton('State Dept. of Education', 'https://www2.ed.gov/about/contacts/state/index.html'));
+      actions.appendChild(createActionButton('Donate to a local classroom', 'https://www.donorschoose.org/'));
+      actions.appendChild(createActionButton('Contact your state senators', 'https://www.senate.gov/senators/senators-contact.htm'));
+      actions.appendChild(createActionButton('Find local advocacy events', 'https://www.eventbrite.com/d/online/education-advocacy/'));
+      actions.appendChild(createActionButton('State Dept. of Education', 'https://www2.ed.gov/about/contacts/state/index.html'));
       }
 
       div.appendChild(h4);
@@ -3230,12 +3238,12 @@
     var select = document.getElementById('state');
     var topics = document.getElementById('topics');
     var storyForm = document.getElementById('storyForm');
-    
+
     if (select && topics) {
-      populateStates(select);
-      select.addEventListener('change', function () {
-        renderTopics(topics, select.value);
-      });
+    populateStates(select);
+    select.addEventListener('change', function () {
+      renderTopics(topics, select.value);
+    });
     }
 
     // Initialize location-based content
