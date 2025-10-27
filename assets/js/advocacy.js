@@ -2767,23 +2767,26 @@
       container.appendChild(resourcesContainer);
     }
 
-    // Add additional local opportunities - moved to be near resources
-    var opportunitiesHeader = document.createElement('div');
-    opportunitiesHeader.className = 'section-header';
-    opportunitiesHeader.innerHTML = '<h4>Get Involved Locally</h4>';
-    container.appendChild(opportunitiesHeader);
-
-    var opportunitiesCard = document.createElement('div');
-    opportunitiesCard.className = 'location-card opportunities-card';
-    opportunitiesCard.innerHTML = 
-      '<h5>Volunteer & Donate</h5>' +
-      '<p>Find local volunteer opportunities, donation pages, and petitions in your area.</p>' +
-      '<div class="actions">' +
-        '<a href="https://www.volunteermatch.org/search?l=' + encodeURIComponent(location) + '&categories=13" target="_blank" class="btn">Find Volunteer Opportunities</a>' +
-        '<a href="https://www.donorschoose.org/search?q=' + encodeURIComponent(location) + '" target="_blank" class="btn">Donate to Local Schools</a>' +
-        '<a href="https://www.change.org/search?q=education+' + encodeURIComponent(location) + '" target="_blank" class="btn">Sign Petitions</a>' +
+    // Add additional local opportunities - merged into one box
+    var opportunitiesContainer = document.createElement('div');
+    opportunitiesContainer.className = 'opportunities-container';
+    
+    var opportunitiesContent = 
+      '<h4>Get Involved Locally</h4>' +
+      '<div class="opportunities-list">' +
+        '<div class="opportunity-item">' +
+          '<h5>Volunteer & Donate</h5>' +
+          '<p>Find local volunteer opportunities, donation pages, and petitions in your area.</p>' +
+          '<div class="actions">' +
+            '<a href="https://www.volunteermatch.org/search?l=' + encodeURIComponent(location) + '&categories=13" target="_blank" class="btn">Find Volunteer Opportunities</a>' +
+            '<a href="https://www.donorschoose.org/search?q=' + encodeURIComponent(location) + '" target="_blank" class="btn">Donate to Local Schools</a>' +
+            '<a href="https://www.change.org/search?q=education+' + encodeURIComponent(location) + '" target="_blank" class="btn">Sign Petitions</a>' +
+          '</div>' +
+        '</div>' +
       '</div>';
-    container.appendChild(opportunitiesCard);
+    
+    opportunitiesContainer.innerHTML = opportunitiesContent;
+    container.appendChild(opportunitiesContainer);
   }
 
   function populateStates(selectEl) {
