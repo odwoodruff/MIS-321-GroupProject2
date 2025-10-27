@@ -618,15 +618,15 @@ body {
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid var(--border);
   border-radius: 16px;
-  padding: 24px;
+  padding: 16px;
   border-left: 4px solid var(--accent-2);
   flex: 1;
 }
 
 .challenges-container h4 {
   color: var(--accent-2);
-  margin: 0 0 20px;
-  font-size: 18px;
+  margin: 0 0 16px;
+  font-size: 16px;
   font-weight: 600;
   text-align: center;
 }
@@ -634,11 +634,11 @@ body {
 .challenges-list {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 12px;
 }
 
 .challenge-item {
-  padding: 16px;
+  padding: 12px;
   background: rgba(255, 255, 255, 0.03);
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -647,27 +647,27 @@ body {
 
 .challenge-item h5 {
   color: var(--accent-2);
-  margin: 0 0 12px;
-  font-size: 16px;
+  margin: 0 0 8px;
+  font-size: 14px;
   font-weight: 600;
 }
 
 .challenge-item p {
   color: var(--muted);
   margin: 0;
-  line-height: 1.6;
-  font-size: 14px;
+  line-height: 1.5;
+  font-size: 13px;
 }
 
 @media (min-width: 768px) {
   .challenges-list {
     flex-direction: row;
-    gap: 16px;
+    gap: 12px;
   }
   
   .challenge-item {
     flex: 1;
-    padding: 18px 16px;
+    padding: 14px 12px;
   }
 }
 
@@ -804,7 +804,7 @@ body {
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid var(--border);
   border-radius: 16px;
-  padding: 24px;
+  padding: 20px;
   border-left: 4px solid var(--accent);
   flex: 1;
 }
@@ -819,8 +819,9 @@ body {
 
 .opportunities-list {
   display: flex;
-  flex-direction: column;
-  gap: 16px;
+  flex-direction: row;
+  gap: 20px;
+  width: 100%;
 }
 
 .opportunity-item {
@@ -829,6 +830,7 @@ body {
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   text-align: center;
+  flex: 1;
 }
 
 .opportunity-item h5 {
@@ -874,15 +876,10 @@ body {
   box-shadow: 0 6px 20px rgba(52, 211, 153, 0.3);
 }
 
-@media (min-width: 768px) {
+@media (max-width: 767px) {
   .opportunities-list {
-    flex-direction: row;
+    flex-direction: column;
     gap: 16px;
-  }
-  
-  .opportunity-item {
-    flex: 1;
-    padding: 18px 16px;
   }
 }
 
