@@ -803,16 +803,29 @@ body {
 .opportunities-container {
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 20px;
+  border-radius: 20px;
+  padding: 40px;
   border-left: 4px solid var(--accent);
   flex: 1;
+  margin: 60px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.opportunities-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent) 0%, var(--accent-2) 100%);
 }
 
 .opportunities-container h4 {
   color: var(--accent);
-  margin: 0 0 20px;
-  font-size: 18px;
+  margin: 0 0 32px;
+  font-size: 24px;
   font-weight: 600;
   text-align: center;
 }
@@ -820,14 +833,14 @@ body {
 .opportunities-list {
   display: flex;
   flex-direction: row;
-  gap: 20px;
+  gap: 32px;
   width: 100%;
 }
 
 .opportunity-item {
-  padding: 16px;
+  padding: 24px;
   background: rgba(255, 255, 255, 0.03);
-  border-radius: 12px;
+  border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   text-align: center;
   flex: 1;
@@ -835,22 +848,22 @@ body {
 
 .opportunity-item h5 {
   color: var(--accent);
-  margin: 0 0 12px;
-  font-size: 16px;
+  margin: 0 0 16px;
+  font-size: 20px;
   font-weight: 600;
 }
 
 .opportunity-item p {
   color: var(--muted);
-  margin: 0 0 16px;
+  margin: 0 0 24px;
   line-height: 1.6;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .opportunity-item .actions {
   display: flex;
   justify-content: center;
-  gap: 12px;
+  gap: 16px;
   flex-wrap: wrap;
 }
 
@@ -858,16 +871,16 @@ body {
   background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
   color: #0b1220;
   border: none;
-  padding: 10px 20px;
-  border-radius: 8px;
+  padding: 12px 24px;
+  border-radius: 10px;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 16px;
   cursor: pointer;
   transition: all 0.3s ease;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
 }
 
 .opportunity-item .actions .btn:hover {
@@ -879,7 +892,12 @@ body {
 @media (max-width: 767px) {
   .opportunities-list {
     flex-direction: column;
-    gap: 16px;
+    gap: 24px;
+  }
+  
+  .opportunities-container {
+    padding: 32px;
+    margin: 40px 0;
   }
 }
 
