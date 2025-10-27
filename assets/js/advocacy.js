@@ -2726,18 +2726,13 @@
     locationHeader.innerHTML = '<h3>📍 ' + location + ', ' + content.state + '</h3>';
     container.appendChild(locationHeader);
 
-    // Create challenge cards
+    // Create challenge cards - merged into one box
     if (content.challenges && content.challenges.length > 0) {
-      var challengesHeader = document.createElement('div');
-      challengesHeader.className = 'section-header';
-      challengesHeader.innerHTML = '<h4>Top 3 Educational Challenges in Your Area</h4>';
-      container.appendChild(challengesHeader);
-
-      // Create a single container for all challenges
+      // Create a single container for all challenges with integrated header
       var challengesContainer = document.createElement('div');
       challengesContainer.className = 'challenges-container';
       
-      var challengesContent = '<div class="challenges-list">';
+      var challengesContent = '<h4>Top 3 Educational Challenges in Your Area</h4><div class="challenges-list">';
       content.challenges.forEach(function(challenge, index) {
         var challengeNumbers = ['One', 'Two', 'Three'];
         var challengeNumber = challengeNumbers[index] || (index + 1);
@@ -2783,7 +2778,7 @@
       container.appendChild(resourcesContainer);
     }
 
-    // Add additional local opportunities
+    // Add additional local opportunities - moved to be near resources
     var opportunitiesHeader = document.createElement('div');
     opportunitiesHeader.className = 'section-header';
     opportunitiesHeader.innerHTML = '<h4>Get Involved Locally</h4>';
