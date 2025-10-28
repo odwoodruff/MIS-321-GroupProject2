@@ -30,17 +30,19 @@
     function setTheme(theme) {
       if (theme === 'light') {
         document.body.classList.add('light-mode');
+        document.documentElement.classList.remove('light-mode-loading');
         moonIcon.classList.add('active');
         sunIcon.classList.remove('active');
       } else {
         document.body.classList.remove('light-mode');
+        document.documentElement.classList.remove('light-mode-loading');
         sunIcon.classList.add('active');
         moonIcon.classList.remove('active');
       }
       localStorage.setItem('theme', theme);
     }
 
-    // Set initial theme
+    // Set initial theme and sync with preload
     setTheme(savedTheme);
 
     // Toggle theme on button click

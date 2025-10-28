@@ -15,6 +15,32 @@
   --header-bg: rgba(18, 30, 48, 0.9);
 }
 
+/* Light mode preload - applies to html element before body loads */
+html.light-mode-loading,
+html.light-mode-loading body {
+  background: linear-gradient(180deg, #f0f9ff 0%, #e0f2fe 100%);
+  color: #1e293b;
+}
+
+html.light-mode-loading .header {
+  background: rgba(240, 249, 255, 0.95);
+  border-color: #bfdbfe;
+}
+
+html.light-mode-loading .nav a {
+  color: #1e293b;
+}
+
+html.light-mode-loading .theme-toggle {
+  color: #1e293b;
+  border-color: #bfdbfe;
+}
+
+html.light-mode-loading .brand .logo {
+  background: linear-gradient(135deg, #0891b2, #2563eb);
+  box-shadow: 0 0 0 2px rgba(8, 145, 178, 0.25), 0 8px 20px rgba(37, 99, 235, 0.15);
+}
+
 /* Light mode colors */
 body.light-mode {
   --bg: #e8f4ff; /* very light blue */
